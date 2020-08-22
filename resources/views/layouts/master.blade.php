@@ -42,7 +42,7 @@
                         <p>Trang chủ</p>
                     </a>
                 <li >
-                    <a href="">
+                    <a href="{{route('beds.index')}}">
                         <i class="nc-icon nc-tile-56"></i>
                         <p>Giường bệnh</p>
                     </a>
