@@ -4,24 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\BedService;
 use App\Http\Services\PatientService;
+use App\Http\Services\RoomService;
 use Illuminate\Http\Request;
 
 class BedController extends Controller
 {
     protected $bedService;
     protected $patientService;
+    protected $roomService;
 
     public function __construct(BedService $bedService,
-                                PatientService $patientService)
+                                PatientService $patientService,
+                                RoomService $roomService)
     {
+        $this->roomService=$roomService;
         $this->bedService = $bedService;
-        $this->patientService=$patientService;
+        $this->patientService = $patientService;
     }
 
     public function index()
     {
         $beds = $this->bedService->getAll();
-        $patients = $this->patientService->getAll();
-        return view('layouts.beds.list',compact('beds','patients'));
+        return view('layouts.beds.list', compact('beds'));
     }
 }

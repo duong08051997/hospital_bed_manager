@@ -17,7 +17,11 @@
     <link href="{{asset('./assets/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('./assets/demo/demo.css')}}" rel="stylesheet" />
+{{--    <link rel="stylesheet" href="{{asset('assets/scss/my.scss')}}">--}}
     <base href="{{asset('')}}">
+    <style>
+
+    </style>
 </head>
 
 <body class="">
@@ -48,7 +52,7 @@
                     </a>
                 {{--                    class="active "--}}
                 <li >
-                    <a href="">
+                    <a href="{{route('patients.index')}}">
                         <i class="nc-icon nc-single-02"></i>
                         <p>Bệnh nhân</p>
                     </a>
@@ -105,7 +109,7 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <div class="content">
+        <div class="content" >
             <div class="row">
                 <div class="col-md-12">
                     @yield('content')

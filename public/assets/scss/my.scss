@@ -1,0 +1,38 @@
+.hover {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: 2px solid #000;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 13px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    transition: color .5s;
+    z-index: 2;
+
+    & ::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: #000;
+        transform-origin: 0 0;
+        transform: scaleX(0);
+        transition: transform 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        z-index: -1;
+    }
+
+    & :hover {
+        color: #fff;
+
+        & ::before {
+            transform: scaleX(1);
+        }
+
+    }
+}

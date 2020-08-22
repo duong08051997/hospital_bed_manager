@@ -20,6 +20,8 @@ Route::prefix('rooms')->group(function () {
     Route::get('/','RoomController@index')->name('rooms.index');
 });
 Route::prefix('beds')->group(function () {
-
     Route::get('/','BedController@index')->name('beds.index');
+});
+Route::prefix('patients')->group(function () {
+    Route::get('/','PatientController@index')->name('patients.index');
 });
