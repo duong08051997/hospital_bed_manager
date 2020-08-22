@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.master');
 });
+Route::prefix('rooms')->group(function () {
+    Route::get('/','RoomController@index')->name('rooms.index');
+});

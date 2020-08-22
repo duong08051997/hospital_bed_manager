@@ -24,36 +24,33 @@
 <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
         <div class="logo">
-            <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+            <a href="#" class="simple-text logo-mini">
                 <div class="logo-image-small">
-                    <img src="./assets/img/logo-small.png">
+                    <img src="./assets/img/benhvien.jpeg">
                 </div>
                 <!-- <p>CT</p> -->
             </a>
-            <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+            <a href="#" class="simple-text logo-normal">
                 Bệnh viện dã chiến
-                {{--                 <div class="logo-image-big">--}}
-                {{--                  <img src="../assets/img/logo-big.png">--}}
-                {{--                </div>--}}
             </a>
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li >
-                    <a href="">
+                    <a href="{{route('rooms.index')}}">
                         <i class="nc-icon nc-bank"></i>
                         <p>Trang chủ</p>
                     </a>
                 <li >
                     <a href="">
                         <i class="nc-icon nc-tile-56"></i>
-                        <p>Danh sách giường bệnh</p>
+                        <p>Giường bệnh</p>
                     </a>
                 {{--                    class="active "--}}
                 <li >
                     <a href="">
                         <i class="nc-icon nc-single-02"></i>
-                        <p>Danh sách bệnh nhân</p>
+                        <p>Bệnh nhân</p>
                     </a>
                 </li>
             </ul>
