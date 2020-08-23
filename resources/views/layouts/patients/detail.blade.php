@@ -11,6 +11,7 @@
                 <thead class=" ">
                 @foreach($patients as $patient)
                     @if($patientId->id == $patient->id )
+                        <a href="{{route('patients.edit',$patient->id)}}" class="btn btn-primary">Chỉnh sửa</a>
                 <tr>
                     <td style="border: none"> <img  src="{{asset('storage/'.$patient->image)}}" width="150" height="150"  class="rounded-circle" alt=""> </td>
                 </tr>
@@ -34,7 +35,7 @@
                 </tr>
                 </thead>
             </table>
-            <a href="{{route('patients.delete',$patient->id)}}" class="btn btn-primary" >Xuất viện</a>
+            <a href="{{route('patients.delete',$patient->id)}}" class="btn btn-success" >Xuất viện</a>
             <button onclick="window.history.go(-1); return false;" class="btn btn-secondary">Quay lại</button>
         </div>
         <div class="pt-3"></div>

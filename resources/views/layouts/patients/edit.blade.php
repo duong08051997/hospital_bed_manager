@@ -16,46 +16,32 @@
                 </div>
                 <div class="form-group">
                     <label >Họ và tên: </label>
-                    <input type="text" class="form-control" name="name" placeholder="Nguyễn Văn A" required>
+                    <input type="text" class="form-control" name="name" value="{{$patient->name}}" required>
                 </div>
                 <div class="form-group">
                     <label>Ngày sinh </label>
-                    <input type="date" class="form-control" name="dob">
+                    <input type="date" class="form-control" name="dob" value="{{$patient->dob}}">
                 </div>
                 <div class="form-group">
                     <label>Giới tính: </label><br>
-                    <input name="gender" type="radio" value="Nam" />Nam<br>
-                    <input name="gender" type="radio" value="Nữ" />Nữ<br>
-                    <input name="gender" type="radio" value="Khác" />Khác<br>
+                    <input name="gender" type="radio" value="Nam" @if($patient->gender == "Nam") {{'checked'}} @endif  />Nam<br>
+                    <input name="gender" type="radio" value="Nữ" @if($patient->gender == "Nữ") {{'checked'}} @endif />Nữ<br>
+                    <input name="gender" type="radio" value="Khác" @if($patient->gender == "Khác") {{'checked'}} @endif />Khác<br>
                 </div>
                 <div class="form-group ">
                     <label >Ngày nhập viện:</label>
-                    <input type="datetime-local" name="date" class="form-control">
+                    <input type="datetime-local" name="date" class="form-control" value="{{$patient->date}}">
                 </div>
                 <div class="form-group">
                     <label>Tình trạng sức khỏe: </label><br>
-                    <input name="status" type="checkbox" value="Nguy kịch" />Nguy kịch<br>
-                    <input name="status" type="checkbox" value="Nặng" />Nặng<br>
-                    <input name="status" type="checkbox" value="Ổn định" />Ổn định<br>
+                    <input name="status" type="checkbox" value="Nguy kịch" @if($patient->status == "Nguy kịch") {{'checked'}} @endif />Nguy kịch<br>
+                    <input name="status" type="checkbox" value="Nặng" @if($patient->status =="Nặng") {{'checked'}} @endif />Nặng<br>
+                    <input name="status" type="checkbox" value="Ổn định" @if($patient->status == "Ổn định") {{'checked'}} @endif />Ổn định<br>
                 </div>
                 <div class="form-group">
                     <label >Biểu hiện: </label>
-                    <textarea class="form-control" name="note" ></textarea>
+                    <textarea class="form-control" name="note" >{{$patient->note}}</textarea>
                 </div>
-                {{--            <div class="form-group">--}}
-                {{--                <form action="{{route('beds.update',$bed->id)}}" method="post">--}}
-                {{--                <label>Giường bệnh:</label>--}}
-                {{--                <select class="form-control" name="patient_id">--}}
-                {{--                    @foreach($beds as $bed)--}}
-                {{--                        <option--}}
-                {{--                            @if($patient->bed->id == $bed->id)--}}
-                {{--                            {{"selected"}}--}}
-                {{--                            @endif--}}
-                {{--                            value="{{$bed->id}}" >{{$bed->name}}</option>--}}
-                {{--                    @endforeach--}}
-                {{--                </select>--}}
-                {{--                </form>--}}
-                {{--            </div>--}}
                 <button type="submit" class="btn btn-primary">Thêm mới</button>
                 <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
             </form>

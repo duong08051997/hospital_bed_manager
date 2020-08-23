@@ -53,4 +53,9 @@ class PatientController extends Controller
         Session::flash('success','Bệnh nhân đã xuât viện');
         return redirect()->route('rooms.index');
     }
+    public function edit($id)
+    {
+        $patient =$this->patientService->findId($id);
+        return view('layouts.patients.edit',compact('patient'));
+    }
 }
