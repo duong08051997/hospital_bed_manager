@@ -49,6 +49,9 @@ class PatientService
             Storage::delete('/public/image');
             $patient->delete();
         }
+    }
+    public function ()
+    {
 
     }
 

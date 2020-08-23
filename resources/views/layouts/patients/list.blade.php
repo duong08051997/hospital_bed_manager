@@ -6,11 +6,13 @@
             <thead>
             <tr>
                 <th>số thứ tự</th>
+                <th>Ảnh bệnh nhân</th>
                 <th>Tên bệnh nhân</th>
                 <th>Ngày sinh</th>
                 <th>Giới tính</th>
                 <th>Ngày nhập viện</th>
-                <th>Triệu chứng</th>
+                <th>Tình trạng sức khỏe</th>
+                <th>Ghi chú</th>
                 <th>Số giường</th>
                 <th>Tên phòng</th>
             </tr>
@@ -26,6 +28,7 @@
                     <td>{{$patient->gender}}</td>
                     <td>{{$patient->date}}</td>
                     <td>{{$patient->status}}</td>
+                    <td>{{$patient->note}}</td>
                     <td>{{$patient->bed->name}}</td>
                     <td>{{$patient->bed->room->name}}</td>
                     @endif

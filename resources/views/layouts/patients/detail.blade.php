@@ -27,7 +27,7 @@
                     <td style="border: none"> <b>Ngày nhập viện:</b> {{$patient->date}}</td>
                 </tr>
                 <tr>
-                    <td style="border: none"> <b>Tình trạng:</b>{{$patient->status}}  </td>
+                    <td style="border: none"> <b>Tình trạng sức khỏe:</b>{{$patient->status}}  </td>
                 </tr>
                 <tr>
                     <td style="border: none"> <b>Ghi chú:</b> {{$patient->note}} </td>

@@ -28,13 +28,13 @@
 <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
         <div class="logo">
-            <a href="#" class="simple-text logo-mini">
+            <a href="{{route('rooms.index')}}" class="simple-text logo-mini">
                 <div class="logo-image-small">
                     <img src="./assets/img/benhvien.jpeg">
                 </div>
                 <!-- <p>CT</p> -->
             </a>
-            <a href="#" class="simple-text logo-normal">
+            <a href="{{route('rooms.index')}}" class="simple-text logo-normal">
                 Bệnh viện dã chiến
             </a>
         </div>
@@ -43,11 +43,11 @@
                 <li >
                     <a href="{{route('rooms.index')}}">
                         <i class="nc-icon nc-bank"></i>
-                        <p>Trang chủ</p>
+                        <p>Phòng bệnh</p>
                     </a>
                 <li >
                     <a href="{{route('beds.index')}}">
-                        <i class="nc-icon nc-tile-56"></i>
+                        <i class="fa fa-bed"></i>
                         <p>Giường bệnh</p>
                     </a>
                 {{--                    class="active "--}}
@@ -72,7 +72,7 @@
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="#">Trang chủ</a>
+                    <a class="navbar-brand" href="{{route('rooms.index')}}">Trang chủ</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -131,6 +131,7 @@
 <script src="./assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="./assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
+<script src="{{asset('./assets/js/my.js')}}"></script>
 </body>
 
 </html>
