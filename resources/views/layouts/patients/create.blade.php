@@ -43,10 +43,10 @@
                 <textarea class="form-control" name="note" ></textarea>
             </div>
 {{--            <div class="form-group">--}}
+{{--                <form action="{{route('beds.update',$bed->id)}}" method="post">--}}
 {{--                <label>Giường bệnh:</label>--}}
-{{--                <select class="form-control" name="">--}}
+{{--                <select class="form-control" name="patient_id">--}}
 {{--                    @foreach($beds as $bed)--}}
-{{--                        {{dd($bed)}}--}}
 {{--                        <option--}}
 {{--                            @if($patient->bed->id == $bed->id)--}}
 {{--                            {{"selected"}}--}}
@@ -54,6 +54,7 @@
 {{--                            value="{{$bed->id}}" >{{$bed->name}}</option>--}}
 {{--                    @endforeach--}}
 {{--                </select>--}}
+{{--                </form>--}}
 {{--            </div>--}}
             <button type="submit" class="btn btn-primary">Thêm mới</button>
             <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>

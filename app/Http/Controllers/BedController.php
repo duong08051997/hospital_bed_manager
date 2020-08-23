@@ -39,4 +39,16 @@ class BedController extends Controller
         Session::flash('success','Thêm giường bệnh thành công');
         return redirect()->route('rooms.index');
     }
+    public function edit()
+    {
+        $patients = $this->patientService->getAll();
+        $beds = $this->bedService->getAll();
+        return  view('layouts.beds.edit',compact('beds','patients'));
+    }
+    public function update(Request $request,$id)
+    {
+        $beds = $this->bedService->findId($id);
+        $this->bedService->updateBed($request,$id);
+        return redirect()->route('rooms.index',compact('beds'));
+    }
 }

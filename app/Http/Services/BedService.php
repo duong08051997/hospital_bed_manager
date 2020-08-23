@@ -6,13 +6,17 @@ namespace App\Http\Services;
 
 use App\Bed;
 use App\Http\Repositories\BedRepository;
+use App\Http\Repositories\PatientRepository;
+use App\Patient;
 
 class BedService
 {
     protected $bedRepo;
-    public function __construct(BedRepository $bedRepo)
+    protected $patientRepo;
+    public function __construct(BedRepository $bedRepo,PatientRepository $patientRepo)
     {
         $this->bedRepo=$bedRepo;
+        $this->patientRepo=$patientRepo;
     }
     public function getAll()
     {
@@ -32,8 +36,8 @@ class BedService
     public function updateBed($request ,$id)
     {
         $bed = $this->bedRepo->findId($id);
-
-
+        $bed->patient_id = $request->patient_id;
+        $this->bedRepo->saveBed($bed);
     }
 
 }

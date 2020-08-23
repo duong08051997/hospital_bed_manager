@@ -5,21 +5,28 @@ namespace App\Http\Repositories;
 
 
 use App\Bed;
+use App\Patient;
 
 class BedRepository
 {
     protected $bed;
-    public function __construct(Bed $bed)
+    protected $patient;
+    public function __construct(Bed $bed,Patient $patient)
     {
         $this->bed=$bed;
+        $this->patient=$patient;
     }
     public function getAll()
     {
         return $this->bed->all();
     }
-    public function save($bed)
+    public function saveBed($bed)
     {
         $bed->save();
+    }
+    public function savePatient($patient)
+    {
+        $patient->save();
     }
     public function findId($id)
     {

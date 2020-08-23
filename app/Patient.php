@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Patient extends Model
 {
@@ -10,4 +11,6 @@ class Patient extends Model
     {
         return $this->hasOne('App\Bed');
     }
+    use SoftDeletes;
+    protected $dates =['deleted_at'];
 }
