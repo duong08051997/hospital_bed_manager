@@ -34,4 +34,6 @@ Route::prefix('patients')->group(function () {
     Route::post('/create','PatientController@store')->name('patients.store');
     Route::get('/{id}/detail','PatientController@detail')->name('patients.detail');
     Route::get('/{id}/delete','PatientController@delete')->name('patients.delete');
+    Route::get('/{id}/edit','PatientController@edit')->name('patients.edit');
+    Route::post('/{id}/edit','PatientController@update')->name('patients.update');
 });
