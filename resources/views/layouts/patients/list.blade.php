@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','danh sach phong')
+@section('title','Danh sách bệnh nhân')
 @section('content')
         <h2>Danh sách bệnh nhân</h2>
         <table class="table table-striped">
