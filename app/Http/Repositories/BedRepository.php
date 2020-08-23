@@ -17,5 +17,9 @@ class BedRepository
     {
         return $this->bed->all();
     }
+    public function save($bed)
+    {
+        $bed->save();
+    }
 
 }

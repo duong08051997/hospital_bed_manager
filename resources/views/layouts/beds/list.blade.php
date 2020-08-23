@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('title','danh sach phong')
 @section('content')
-
         <h2>Danh sách giường bệnh</h2>
         <table class="table table-striped">
             <thead>

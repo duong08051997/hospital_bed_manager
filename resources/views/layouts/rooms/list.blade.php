@@ -7,6 +7,7 @@
         </p>
     @endif
     <a href="{{route('rooms.create')}}" class="btn btn-success"><i class="fa fa-plus">Thêm mới phòng bệnh</i></a>
+    <a href="{{route('beds.create')}}" class="btn btn-success"><i class="fa fa-plus">Thêm mới giường bệnh</i></a>
     @foreach($rooms as $room)
     <div class="col-md-12" style="margin-bottom: 15px ;background-color: white">
     <div class="col-md-12" >

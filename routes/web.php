@@ -23,6 +23,8 @@ Route::prefix('rooms')->group(function () {
 });
 Route::prefix('beds')->group(function () {
     Route::get('/','BedController@index')->name('beds.index');
+    Route::get('/create','BedController@create')->name('beds.create');
+    Route::post('create','BedController@store')->name('beds.store');
 });
 Route::prefix('patients')->group(function () {
     Route::get('/','PatientController@index')->name('patients.index');
