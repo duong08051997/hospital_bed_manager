@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Thêm mới giường bệnh')
+@section('title','Chi tiết bệnh nhân')
 @section('content')
 
 <div class="container" >

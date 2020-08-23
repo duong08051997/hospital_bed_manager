@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Thêm mới giường bệnh')
+@section('title','Thêm mới bệnh nhân')
 @section('content')
 
 <div class="row">
