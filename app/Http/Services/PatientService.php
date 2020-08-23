@@ -50,9 +50,28 @@ class PatientService
             $patient->delete();
         }
     }
-    public function ()
+    public function updatePatient($request,$id)
     {
+        $patient = $this->patientRepo->findId($id);
+        if ($request->hasFile('image')) {
+            $patientImg = $patient->image;
+            if ($patientImg) {
+                Storage::delete('/public' . $patientImg);
+            }
+            $image = $request->file('image');
+            $path = $image->store('image', 'public');
+            $patient->image = $path;
+        }
+        $patient->name =$request->name;
+        $patient->dob =$request->dob;
+        $patient->gender=$request->gender;
+        $patient->date =$request->date;
+        $patient->status=$request->status;
+        $patient->note=$request->note;
+        $this->patientRepo->save($patient);
 
     }
+
+
 
 }
