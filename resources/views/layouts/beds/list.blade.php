@@ -2,7 +2,6 @@
 @section('title','danh sach phong')
 @section('content')
 
-    <div class="container">
         <h2>Danh sách giường bệnh</h2>
         <table class="table table-striped">
             <thead>
@@ -13,6 +12,7 @@
                 <th>Tên bệnh nhân</th>
                 <th>Ngày sinh</th>
                 <th>Giới tính</th>
+                <th>Ngày nhập viện</th>
                 <th>Tình trạng bệnh</th>
                 <th>Chú thích</th>
             </tr>
@@ -20,14 +20,25 @@
             <tbody>
             @forelse($beds as $key => $bed)
                 <tr>
+{{--                    {{dd($bed->patient)}}--}}
                     <td>{{++$key}}</td>
                     <td>{{$bed->name}}</td>
                     <td>{{$bed->room->name}}</td>
+                    @if(!empty($bed->patient_id))
                     <td>{{$bed->patient->name}}</td>
                     <td>{{$bed->patient->dob}}</td>
                     <td>{{$bed->patient->gender}}</td>
+                    <td>{{$bed->patient->date}}</td>
                     <td>{{$bed->patient->status}}</td>
                     <td>{{$bed->patient->note}}</td>
+                    @else
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    @endif
                 </tr>
 
             @empty
@@ -37,5 +48,5 @@
             @endforelse
             </tbody>
         </table>
-    </div>
+
 @endsection

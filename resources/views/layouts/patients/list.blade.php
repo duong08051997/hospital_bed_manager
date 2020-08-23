@@ -1,9 +1,7 @@
 @extends('layouts.master')
 @section('title','danh sach phong')
 @section('content')
-
-    <div class="container">
-        <h2>Danh sách giường bệnh</h2>
+        <h2>Danh sách bệnh nhân</h2>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -36,6 +34,5 @@
             @endforelse
             </tbody>
         </table>
-    </div>
 @endsection
 

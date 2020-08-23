@@ -6,6 +6,7 @@ use App\Http\Services\BedService;
 use App\Http\Services\PatientService;
 use App\Http\Services\RoomService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class RoomController extends Controller
 {
@@ -26,5 +27,16 @@ class RoomController extends Controller
         $beds = $this->bedService->getAll();
         $rooms = $this->roomService->getAll();
         return view('layouts.rooms.list', compact('rooms', 'beds'));
+    }
+    public function create()
+    {
+        return view('layouts.rooms.create');
+    }
+    public function store(Request $request)
+    {
+        $this->roomService->addRoom($request);
+        Session::flash('success','Thêm mới phòng bệnh thành công');
+        return redirect()->route('rooms.index');
+
     }
 }

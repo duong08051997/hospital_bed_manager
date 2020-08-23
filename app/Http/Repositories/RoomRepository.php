@@ -14,5 +14,9 @@ class RoomRepository
     {
         return $this->room->all();
     }
+    public function save($room)
+    {
+        $room->save();
+    }
 
 }
