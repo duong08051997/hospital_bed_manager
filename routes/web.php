@@ -32,5 +32,6 @@ Route::prefix('patients')->group(function () {
     Route::get('/','PatientController@index')->name('patients.index');
     Route::get('/create','PatientController@create')->name('patients.create');
     Route::post('/create','PatientController@store')->name('patients.store');
-
+    Route::get('/{id}/detail','PatientController@detail')->name('patients.detail');
+    Route::get('/{id}/delete','PatientController@delete')->name('patients.delete');
 });

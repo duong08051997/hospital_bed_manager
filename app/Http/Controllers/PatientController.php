@@ -40,4 +40,17 @@ class PatientController extends Controller
         Session::flash('success','Thêm mới bệnh nhân thành công');
         return redirect()->route('rooms.index');
     }
+    public function detail($id)
+    {
+        $patientId = $this->patientService->findId($id);
+        $beds = $this->bedService->getAll();
+        $patients = $this->patientService->getAll();
+        return view('layouts.patients.detail',compact('patients','beds','patientId'));
+    }
+    public function delete($id)
+    {
+        $this->patientService->deletePatient($id);
+        Session::flash('success','Bệnh nhân đã xuât viện');
+        return redirect()->route('rooms.index');
+    }
 }

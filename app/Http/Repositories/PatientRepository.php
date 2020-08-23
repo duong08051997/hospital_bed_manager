@@ -21,5 +21,9 @@ class PatientRepository
     {
         $patient->save();
     }
+    public function findId($id)
+    {
+        return $this->patient->findOrFail($id);
+    }
 
 }

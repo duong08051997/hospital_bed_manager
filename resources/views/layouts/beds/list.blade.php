@@ -19,11 +19,10 @@
             <tbody>
             @forelse($beds as $key => $bed)
                 <tr>
-{{--                    {{dd($bed->patient)}}--}}
                     <td>{{++$key}}</td>
                     <td>{{$bed->name}}</td>
                     <td>{{$bed->room->name}}</td>
-                    @if(!empty($bed->patient_id))
+                    @if(!empty($bed->patient->id))
                     <td>{{$bed->patient->name}}</td>
                     <td>{{$bed->patient->dob}}</td>
                     <td>{{$bed->patient->gender}}</td>

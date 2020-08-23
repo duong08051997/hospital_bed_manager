@@ -6,6 +6,7 @@ namespace App\Http\Services;
 
 use App\Http\Repositories\PatientRepository;
 use App\Patient;
+use Illuminate\Support\Facades\Storage;
 
 class PatientService
 {
@@ -34,6 +35,21 @@ class PatientService
         $patient->status=$request->status;
         $patient->note=$request->note;
         $this->patientRepo->save($patient);
+    }
+    public function findId($id)
+    {
+        return $this->patientRepo->findId($id);
+
+    }
+    public function deletePatient($id)
+    {
+        $patient = $this->patientRepo->findId($id);
+        $image = $patient->image;
+        if ($image) {
+            Storage::delete('/public/image');
+            $patient->delete();
+        }
+
     }
 
 }
