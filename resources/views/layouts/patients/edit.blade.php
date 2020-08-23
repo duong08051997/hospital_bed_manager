@@ -39,10 +39,10 @@
                     <input name="status" type="checkbox" value="Ổn định" @if($patient->status == "Ổn định") {{'checked'}} @endif />Ổn định<br>
                 </div>
                 <div class="form-group">
-                    <label >Biểu hiện: </label>
+                    <label >Chú thích: </label>
                     <textarea class="form-control" name="note" >{{$patient->note}}</textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
                 <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
             </form>
         </div>

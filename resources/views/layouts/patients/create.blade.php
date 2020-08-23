@@ -39,7 +39,7 @@
                 <input name="status" type="checkbox" value="Ổn định" />Ổn định<br>
             </div>
             <div class="form-group">
-                <label >Biểu hiện: </label>
+                <label>Chú thích: </label>
                 <textarea class="form-control" name="note" ></textarea>
             </div>
 {{--            <div class="form-group">--}}

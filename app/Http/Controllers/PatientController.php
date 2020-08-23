@@ -58,4 +58,10 @@ class PatientController extends Controller
         $patient =$this->patientService->findId($id);
         return view('layouts.patients.edit',compact('patient'));
     }
+    public function update(Request $request,$id)
+    {
+        $this->patientService->updatePatient($request,$id);
+        Session::flash('success','Chỉnh sửa thông tin bệnh nhân thành công');
+        return redirect()->route('rooms.index');
+    }
 }
