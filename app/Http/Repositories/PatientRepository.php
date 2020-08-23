@@ -17,5 +17,9 @@ class PatientRepository
     {
         return $this->patient->all();
     }
+    public function save($patient)
+    {
+        $patient->save();
+    }
 
 }

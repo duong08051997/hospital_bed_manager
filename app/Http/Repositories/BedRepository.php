@@ -21,5 +21,9 @@ class BedRepository
     {
         $bed->save();
     }
+    public function findId($id)
+    {
+        return $this->bed->findOrFail($id);
+    }
 
 }

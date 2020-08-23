@@ -17,7 +17,7 @@
                 @foreach($beds as $bed)
                     @if($bed->room_id==$room->id)
                     <div class="col-md-1">
-                        <a href="" class="hover">
+                        <a href=" @if(empty($bed->patient->id)){{route('patients.create')}} @else # @endif" class="hover">
                             <div>
                                 <div class="bedgreeen">
                                     <i class="fa fa-bed"

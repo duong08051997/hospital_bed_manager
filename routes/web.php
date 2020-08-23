@@ -28,4 +28,6 @@ Route::prefix('beds')->group(function () {
 });
 Route::prefix('patients')->group(function () {
     Route::get('/','PatientController@index')->name('patients.index');
+    Route::get('/create','PatientController@create')->name('patients.create');
+    Route::post('/create','PatientController@store')->name('patients.store');
 });
