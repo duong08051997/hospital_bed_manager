@@ -27,7 +27,7 @@ class BedService
         $bed = new Bed();
         $bed->name = $request->name;
         $bed->room_id = $request->room_id;
-        $this->bedRepo->save($bed);
+        $this->bedRepo->saveBed($bed);
     }
     public function findId($id)
     {
