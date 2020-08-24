@@ -6,18 +6,26 @@
             <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}
         </p>
     @endif
-    <a href="{{route('rooms.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới phòng bệnh</i></a>
-    <a href="{{route('beds.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới giường bệnh</i></a>
-    @foreach($rooms as $room)
+    <a href="{{route('rooms.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới
+            phòng bệnh</i></a>
+    <a href="{{route('beds.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới
+            giường bệnh</i></a>
     <img src="./assets/img/red.jpg" alt="" width="15px" height="20px" style="margin-left: 30px"> Nguy kịch
-    <img src="./assets/img/orange.png" alt="" width="15px" height="20px" style="margin-left: 30px" > Nặng
+    @foreach($patients as $patient) @if($patient->status=="Nguy kịch") {{count($patients)}} @endif @endforeach
+    <img src="./assets/img/orange.png" alt="" width="15px" height="20px" style="margin-left: 30px"> Nặng
     <img src="./assets/img/pink.jpg" alt="" width="15px" height="20px" style="margin-left: 30px"> Ổn định
-    <img src="./assets/img/green.png" alt="" width="15px" height="20px"  style="margin-left: 30px"> Trống
-
-
+    <img src="./assets/img/green.png" alt="" width="15px" height="20px" style="margin-left: 30px"> Trống
+    @foreach($rooms as $room)
         <div class="col-md-12" style="margin-bottom: 15px ;background-color: white">
             <div class="col-md-12">
-                <div style="font-size: 20px"> {{$room->name}}</div>
+                <div style="font-size: 20px;
+                        @if($room->name =="Phòng cách ly đặc biệt") color :{{'#800000'}}
+                @elseif( $room->name =="Phòng cấp cứu") color :{{'red'}}
+                @elseif($room->name =="Phòng điều trị") color:{{'#FF9900'}}
+                @elseif($room->name =="Phòng phục hồi chức năng") color :{{"#006600"}}
+                @endif
+                ">
+                    {{$room->name}}</div>
                 <fieldset class="">
                     <div class="row">
                         @foreach($beds as $bed)

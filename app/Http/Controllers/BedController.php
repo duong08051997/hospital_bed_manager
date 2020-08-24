@@ -6,6 +6,7 @@ use App\Http\Services\BedService;
 use App\Http\Services\PatientService;
 use App\Http\Services\RoomService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class BedController extends Controller
@@ -25,8 +26,11 @@ class BedController extends Controller
 
     public function index()
     {
-        $beds = $this->bedService->getAll();
-        return view('layouts.beds.list', compact('beds'));
+        if (Auth::check()) {
+            $beds = $this->bedService->getAll();
+            return view('layouts.beds.list', compact('beds'));
+        }
+        return view('login');
     }
     public function create()
     {

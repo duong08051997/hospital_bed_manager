@@ -37,7 +37,7 @@ class AuthController extends Controller
     {
         return view('login');
     }
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
         $data =[
             'email'=>$request->email,
@@ -51,7 +51,6 @@ class AuthController extends Controller
     }
     public function logout()
     {
-
         Auth::logout();
         return redirect()->route('login');
     }

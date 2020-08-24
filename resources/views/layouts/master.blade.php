@@ -90,32 +90,37 @@
                             </div>
                         </div>
                     </form>
-{{--                    <ul class="navbar-nav">--}}
-{{--                        <li class="nav-item btn-rotate dropdown">--}}
+                    <ul class="navbar-nav">
+                        <li class="nav-item btn-rotate dropdown">
 {{--                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
 {{--                                <i class="nc-icon nc-bell-55"></i>--}}
 {{--                                <p>--}}
 {{--                                    <span class="d-lg-none d-md-block">Some Actions</span>--}}
 {{--                                </p>--}}
-{{--                            </a>--}}
-{{--                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">--}}
+                            <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false" style="color: green"><i class="nc-icon nc-single-02">
+{{--                                    account_circle--}}
+                                </i>{{\Illuminate\Support\Facades\Auth::user()->name}}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 {{--                                <a class="dropdown-item" href="#">Action</a>--}}
 {{--                                <a class="dropdown-item" href="#">Another action</a>--}}
 {{--                                <a class="dropdown-item" href="#">Something else here</a>--}}
-{{--                            </div>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-                    <ul class="navbar-nav ml-auto  nav-item dropdown">
-                        <li>
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false" style="color: #007bff"><i class="material-icons icon">
-                                    account_circle
-                                </i>{{\Illuminate\Support\Facades\Auth::user()->username}}</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('users.logout') }}">log out </a>
                             </div>
                         </li>
                     </ul>
+{{--                    <ul class="navbar-nav ml-auto  nav-item dropdown">--}}
+{{--                        <li>--}}
+{{--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"--}}
+{{--                               aria-haspopup="true" aria-expanded="false" style="color: #007bff"><i class="material-icons icon">--}}
+{{--                                    account_circle--}}
+{{--                                </i>{{\Illuminate\Support\Facades\Auth::user()->username}}</a>--}}
+{{--                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+{{--                                <a class="dropdown-item" href="{{ route('users.logout') }}">log out </a>--}}
+{{--                            </div>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
                 </div>
             </div>
         </nav>
@@ -142,6 +147,11 @@
 <script src="./assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="./assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
+      integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY="
+      crossorigin="anonymous"/>
+
 <script src="{{asset('./assets/js/my.js')}}"></script>
 </body>
 
