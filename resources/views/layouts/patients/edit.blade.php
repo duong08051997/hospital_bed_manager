@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group ">
                     <label >Ngày nhập viện:</label>
-                    <input type="datetime-local" name="date" class="form-control" value="{{$patient->date}}">
+                    <input type="datetime-local" name="date" class="form-control" value="{{$patient->getAttributeDate($patient->date) }}">
                 </div>
                 <div class="form-group">
                     <label>Tình trạng sức khỏe: </label><br>
