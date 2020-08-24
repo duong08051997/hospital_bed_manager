@@ -5,15 +5,10 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>số thứ tự</th>
-                <th>số giường</th>
+                <th>STT</th>
+                <th>Số giường</th>
                 <th>Loại phòng</th>
                 <th>Tên bệnh nhân</th>
-{{--                <th>Ngày sinh</th>--}}
-{{--                <th>Giới tính</th>--}}
-{{--                <th>Ngày nhập viện</th>--}}
-{{--                <th>Tình trạng bệnh</th>--}}
-{{--                <th>Chú thích</th>--}}
             </tr>
             </thead>
             <tbody>
@@ -24,11 +19,6 @@
                     <td>{{$bed->room->name}}</td>
                     @if(!empty($bed->patient->id))
                     <td>{{$bed->patient->name}}</td>
-{{--                    <td>{{$bed->patient->dob}}</td>--}}
-{{--                    <td>{{$bed->patient->gender}}</td>--}}
-{{--                    <td>{{$bed->patient->date}}</td>--}}
-{{--                    <td>{{$bed->patient->status}}</td>--}}
-{{--                    <td>{{$bed->patient->note}}</td>--}}
                         <td></td>
                         <td></td>
                         <td></td>
@@ -38,6 +28,14 @@
                         <td></td>
                         <td></td>
                     @endif
+                    <td>
+                        <a href="{{route('beds.edit',$bed->id)}}">
+                            <i class="fa fa-edit" style="font-size:24px"></i></a>
+                    </td>
+                    <td>
+                        <a href="#" >
+                            <i class="fa fa-trash-o" style="font-size:24px;color: red"></i></a>
+                    </td>
                 </tr>
 
             @empty
@@ -47,5 +45,5 @@
             @endforelse
             </tbody>
         </table>
-
+        {{ $beds->appends(request()->query()) }}
 @endsection

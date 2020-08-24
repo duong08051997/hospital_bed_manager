@@ -10,8 +10,8 @@
             phòng bệnh</i></a>
     <a href="{{route('beds.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới
             giường bệnh</i></a>
+
     <img src="./assets/img/red.jpg" alt="" width="15px" height="20px" style="margin-left: 30px"> Nguy kịch
-    @foreach($patients as $patient) @if($patient->status=="Nguy kịch") {{count($patients)}} @endif @endforeach
     <img src="./assets/img/orange.png" alt="" width="15px" height="20px" style="margin-left: 30px"> Nặng
     <img src="./assets/img/pink.jpg" alt="" width="15px" height="20px" style="margin-left: 30px"> Ổn định
     <img src="./assets/img/green.png" alt="" width="15px" height="20px" style="margin-left: 30px"> Trống

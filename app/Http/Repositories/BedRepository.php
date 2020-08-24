@@ -16,9 +16,14 @@ class BedRepository
         $this->bed=$bed;
         $this->patient=$patient;
     }
+    public function getOrderBy()
+    {
+        return $this->bed->orderBy('name', 'ASC')->paginate(8);
+    }
     public function getAll()
     {
         return $this->bed->all();
+
     }
     public function saveBed($bed)
     {

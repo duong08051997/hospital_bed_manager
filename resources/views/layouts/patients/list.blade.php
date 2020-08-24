@@ -5,14 +5,10 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>số thứ tự</th>
+                <th>STT</th>
                 <th>Ảnh bệnh nhân</th>
                 <th>Tên bệnh nhân</th>
-{{--                <th>Ngày sinh</th>--}}
-{{--                <th>Giới tính</th>--}}
                 <th>Ngày nhập viện</th>
-{{--                <th>Tình trạng sức khỏe</th>--}}
-{{--                <th>Ghi chú</th>--}}
                 <th>Số giường</th>
                 <th>Tên phòng</th>
             </tr>
@@ -22,15 +18,19 @@
                 <tr>
                     @if(!empty($patient->bed->id))
                     <td>{{++$key}}</td>
-                    <td id="search-img"><img src="{{asset('storage/'.$patient->image)}}"  alt="không có ảnh" width="50" height="50">
-                    <td>{{$patient->name}}</td>
-{{--                    <td>{{$patient->dob}}</td>--}}
-{{--                    <td>{{$patient->gender}}</td>--}}
+                    <td><img src="{{asset('storage/'.$patient->image)}}"  alt="không có ảnh" width="50" height="50">
+                    <td><a href="{{route('patients.detail',$patient->id)}}" style="color: black">{{$patient->name}}</a></td>
                     <td>{{$patient->date}}</td>
-{{--                    <td>{{$patient->status}}</td>--}}
-{{--                    <td>{{$patient->note}}</td>--}}
                     <td>{{$patient->bed->name}}</td>
                     <td>{{$patient->bed->room->name}}</td>
+                        <td>
+                            <a href="{{route('patients.edit',$patient->id)}}">
+                                <i class="fa fa-edit" style="font-size:24px"></i></a>
+                        </td>
+                        <td>
+                            <a href="{{route('patients.delete',$patient->id)}}" >
+                                <i class="fa fa-trash-o" style="font-size:24px;color: red"></i></a>
+                        </td>
                     @endif
                 </tr>
             @empty
@@ -40,5 +40,6 @@
             @endforelse
             </tbody>
         </table>
+        {{ $patients->appends(request()->query()) }}
 @endsection
 

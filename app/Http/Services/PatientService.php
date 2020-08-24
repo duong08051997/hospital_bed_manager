@@ -20,6 +20,11 @@ class PatientService
     {
         return $this->patientRepo->getAll();
     }
+    public function getOrderBy()
+    {
+        return $this->patientRepo->getOrderBy();
+
+    }
     public function addPatient($request)
     {
         $patient = new Patient();

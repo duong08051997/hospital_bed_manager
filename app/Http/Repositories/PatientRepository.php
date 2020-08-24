@@ -13,6 +13,10 @@ class PatientRepository
     {
         $this->patient=$patient;
     }
+    public function getOrderBy()
+    {
+        return $this->patient->orderBy('id', 'DESC')->paginate(8);
+    }
     public function getAll()
     {
         return $this->patient->all();

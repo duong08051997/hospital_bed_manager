@@ -22,6 +22,10 @@ class BedService
     {
         return $this->bedRepo->getAll();
     }
+    public function getOrderBy()
+    {
+        return $this->bedRepo->getOrderBy();
+    }
     public function addBed($request)
     {
         $bed = new Bed();
