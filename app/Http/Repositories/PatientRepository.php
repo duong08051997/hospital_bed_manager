@@ -29,5 +29,9 @@ class PatientRepository
     {
         return $this->patient->findOrFail($id);
     }
+    public function search($keyword)
+    {
+        return $this->patient->where('name', 'LIKE', '%' . $keyword . '%')->paginate(8);
+    }
 
 }

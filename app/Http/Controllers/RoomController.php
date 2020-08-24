@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Bed;
 use App\Http\Services\BedService;
 use App\Http\Services\PatientService;
 use App\Http\Services\RoomService;
+use App\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class RoomController extends Controller
@@ -29,7 +32,10 @@ class RoomController extends Controller
             $patients = $this->patientService->getAll();
             $beds = $this->bedService->getAll();
             $rooms = $this->roomService->getAll();
-            return view('layouts.rooms.list', compact('rooms', 'beds', 'patients'));
+            $patientSts = Patient::groupBy('status')->selectRaw('count(*) as total,status')->get();
+            $patient_ids = Bed::groupBy('patient_id')->selectRaw('count(*) as total,patient_id')->get();
+//            dd($patient_ids);
+            return view('layouts.rooms.list', compact('rooms', 'beds', 'patients','patientSts','patient_ids'));
         }
         return view('login');
     }

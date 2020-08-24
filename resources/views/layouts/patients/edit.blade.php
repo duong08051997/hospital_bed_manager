@@ -11,8 +11,12 @@
                 @csrf
                 <div class="form-group">
                     <label >Ảnh bệnh nhân: </label><br>
-                    <i class='fa fa-camera-retro' style='font-size:32px'></i>
-                    <input type="file" class="form-control" name="image">
+                    @if (asset("/storage/image/{{ $patient->image }}"))
+                        <img src="{{ asset("/storage/$patient->image ") }}" width="50px">
+                    @else
+                        <p>No image found</p>
+                    @endif
+                 <input type="file" name="image" value="{{ $patient->images }}"/>
                 </div>
                 <div class="form-group">
                     <label >Họ và tên: </label>

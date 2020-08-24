@@ -76,6 +76,11 @@ class PatientService
         $this->patientRepo->save($patient);
 
     }
+    public function search($request)
+    {
+        $keyword = $request->input('keyword');
+        return $this->patientRepo->search($keyword);
+    }
 
 
 

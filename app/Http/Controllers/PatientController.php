@@ -68,4 +68,11 @@ class PatientController extends Controller
         Session::flash('success','Chỉnh sửa thông tin bệnh nhân thành công');
         return redirect()->route('rooms.index');
     }
+    public function search(Request $request)
+    {
+        $rooms = $this->roomService->getAll();
+        $beds =$this->bedService->getAll();
+        $patients = $this->patientService->search($request);
+        return view('layouts.patients.list', compact('patients','beds','rooms'));
+    }
 }
