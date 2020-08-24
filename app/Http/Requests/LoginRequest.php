@@ -1,0 +1,43 @@
+<?php
+
+
+namespace App\Http\Requests;
+
+
+class LoginRequest
+{
+
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'email'=>'required|email',
+            'password'=>'required|min:2'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'email.required'=>'Email không được để trống',
+            'email.email'=>'Email không đúng định dạng',
+            'password.required'=>'Password không được để trống',
+            'password.min'=>'Password không được ít hơn 2 kí tự'
+        ];
+
+
+    }
+}

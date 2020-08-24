@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Services\UserService;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -35,7 +37,7 @@ class AuthController extends Controller
     {
         return view('login');
     }
-    public function login(LoginRequest $request)
+    public function login(Request $request)
     {
         $data =[
             'email'=>$request->email,
@@ -45,7 +47,7 @@ class AuthController extends Controller
             toastr()->error('Email hoặc mật khẩu không đúng!');
             return redirect()->route('login');
         }
-        return redirect()->route('customers.index');
+        return redirect()->route('rooms.index');
     }
     public function logout()
     {

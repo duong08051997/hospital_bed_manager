@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-});
+Route::get('/register','AuthController@showFormRegister')->name('form.register');
+Route::post('/register','AuthController@Register')->name('users.register');
+Route::get('/','AuthController@showFormLogin')->name('login');
+Route::post('login','AuthController@login')->name('users.login');
+Route::get('/logout', 'AuthController@logout')->name('users.logout');
 Route::prefix('rooms')->group(function () {
     Route::get('/','RoomController@index')->name('rooms.index');
     Route::get('/create','RoomController@create')->name('rooms.create');
@@ -37,3 +39,4 @@ Route::prefix('patients')->group(function () {
     Route::get('/{id}/edit','PatientController@edit')->name('patients.edit');
     Route::post('/{id}/edit','PatientController@update')->name('patients.update');
 });
+

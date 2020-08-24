@@ -8,12 +8,13 @@
     @endif
     <a href="{{route('rooms.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới phòng bệnh</i></a>
     <a href="{{route('beds.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới giường bệnh</i></a>
+    @foreach($rooms as $room)
     <img src="./assets/img/red.jpg" alt="" width="15px" height="20px" style="margin-left: 30px"> Nguy kịch
     <img src="./assets/img/orange.png" alt="" width="15px" height="20px" style="margin-left: 30px" > Nặng
     <img src="./assets/img/pink.jpg" alt="" width="15px" height="20px" style="margin-left: 30px"> Ổn định
     <img src="./assets/img/green.png" alt="" width="15px" height="20px"  style="margin-left: 30px"> Trống
 
-    @foreach($rooms as $room)
+
         <div class="col-md-12" style="margin-bottom: 15px ;background-color: white">
             <div class="col-md-12">
                 <div style="font-size: 20px"> {{$room->name}}</div>
@@ -58,7 +59,7 @@
                                                      @endif
                                                      @endif;
                                                          ">
-                                                    @if(!empty($bed->patient->id)) {{$bed->patient->name}} @else {{$bed->name}} @endif
+                                                    {{$bed->name}}
                                                 </div>
                                             </div>
                                         </div>

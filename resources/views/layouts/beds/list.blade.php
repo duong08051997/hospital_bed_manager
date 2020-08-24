@@ -9,11 +9,11 @@
                 <th>số giường</th>
                 <th>Loại phòng</th>
                 <th>Tên bệnh nhân</th>
-                <th>Ngày sinh</th>
-                <th>Giới tính</th>
-                <th>Ngày nhập viện</th>
-                <th>Tình trạng bệnh</th>
-                <th>Chú thích</th>
+{{--                <th>Ngày sinh</th>--}}
+{{--                <th>Giới tính</th>--}}
+{{--                <th>Ngày nhập viện</th>--}}
+{{--                <th>Tình trạng bệnh</th>--}}
+{{--                <th>Chú thích</th>--}}
             </tr>
             </thead>
             <tbody>
@@ -24,14 +24,15 @@
                     <td>{{$bed->room->name}}</td>
                     @if(!empty($bed->patient->id))
                     <td>{{$bed->patient->name}}</td>
-                    <td>{{$bed->patient->dob}}</td>
-                    <td>{{$bed->patient->gender}}</td>
-                    <td>{{$bed->patient->date}}</td>
-                    <td>{{$bed->patient->status}}</td>
-                    <td>{{$bed->patient->note}}</td>
+{{--                    <td>{{$bed->patient->dob}}</td>--}}
+{{--                    <td>{{$bed->patient->gender}}</td>--}}
+{{--                    <td>{{$bed->patient->date}}</td>--}}
+{{--                    <td>{{$bed->patient->status}}</td>--}}
+{{--                    <td>{{$bed->patient->note}}</td>--}}
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     @else
-                        <td></td>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
