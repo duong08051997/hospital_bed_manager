@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/logo-small.png">
     <link rel="icon" type="image/png" href="./assets/img/logo-small.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -118,14 +119,12 @@
 <script src="./assets/js/core/popper.min.js"></script>
 <script src="./assets/js/core/bootstrap.min.js"></script>
 <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Chart JS -->
 <script src="./assets/js/plugins/chartjs.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="./assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="./assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
+{{--<script src="./assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>--}}
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
       integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY="

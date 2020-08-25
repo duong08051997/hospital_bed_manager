@@ -75,4 +75,9 @@ class PatientController extends Controller
         $patients = $this->patientService->search($request);
         return view('layouts.patients.list', compact('patients','beds','rooms'));
     }
+    public function searchById($id)
+    {
+        $patientId = $this->patientService->findId($id);
+        return response()->json($patientId);
+    }
 }

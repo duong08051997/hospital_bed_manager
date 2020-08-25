@@ -12,7 +12,7 @@
                 @csrf
                 <div class="form-group">
                     <label>Họ và tên: </label>
-                    <select class="form-control" name="patient_id">
+                    <select class="form-control" name="patient_id" id="select-patient">
                         @foreach($patients as $patient)
                             <option
                                 value="{{$patient->id}}">{{$patient->name}}
@@ -24,6 +24,9 @@
                 <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
             </form>
         </div>
+    </div>
+    <div id="patient-detail">
+
     </div>
 @endsection
 

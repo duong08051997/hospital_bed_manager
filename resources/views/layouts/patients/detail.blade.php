@@ -17,7 +17,7 @@
                 </table>
                 <a href="{{route('patients.delete',$patient->id)}}" class="btn btn-success">Xuất viện</a>
                 <button onclick="window.history.go(-1); return false;" class="btn btn-secondary">Quay lại</button>
-           <button>chi tiet</button>
+           <button class="search-detail">chi tiet</button>
             </div>
             <div class="row">
                 <div class=" col-sm-12 " id="detail">
@@ -65,4 +65,5 @@
                 </div>
             </div>
         </div>
+    <div class="display-detail"></div>
 @endsection

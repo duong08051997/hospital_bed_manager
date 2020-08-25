@@ -40,7 +40,7 @@ Route::prefix('patients')->group(function () {
     Route::get('/{id}/delete','PatientController@delete')->name('patients.delete');
     Route::get('/{id}/edit','PatientController@edit')->name('patients.edit');
     Route::post('/{id}/edit','PatientController@update')->name('patients.update');
-
     Route::get('/search', 'PatientController@search')->name('patients.search');
+    Route::get('/{id}/searchById','PatientController@searchById')->name('patients.searchById');
 });
 
