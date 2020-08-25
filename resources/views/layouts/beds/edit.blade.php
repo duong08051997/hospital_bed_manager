@@ -7,7 +7,7 @@
         <div class="col-12">
             <h4>Thêm bệnh nhân vào giường bệnh</h4>
         </div>
-        <div class="col-12">
+        <div class="col-sm-12">
             <form method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">

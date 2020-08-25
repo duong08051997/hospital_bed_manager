@@ -29,6 +29,8 @@ Route::prefix('beds')->group(function () {
     Route::post('create','BedController@store')->name('beds.store');
     Route::get('/{id}/edit','BedController@edit')->name('beds.edit');
     Route::post('/{id}/edit','BedController@update')->name('beds.update');
+    Route::get('/{id}/out','BedController@showFormOut')->name('patients.formOut');
+    Route::post('/{id}/out','BedController@patientOut')->name('patients.out');
 });
 Route::prefix('patients')->group(function () {
     Route::get('/','PatientController@index')->name('patients.index');
@@ -38,6 +40,7 @@ Route::prefix('patients')->group(function () {
     Route::get('/{id}/delete','PatientController@delete')->name('patients.delete');
     Route::get('/{id}/edit','PatientController@edit')->name('patients.edit');
     Route::post('/{id}/edit','PatientController@update')->name('patients.update');
+
     Route::get('/search', 'PatientController@search')->name('patients.search');
 });
 

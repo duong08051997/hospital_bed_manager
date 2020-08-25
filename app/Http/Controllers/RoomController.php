@@ -33,6 +33,7 @@ class RoomController extends Controller
             $beds = $this->bedService->getAll();
             $rooms = $this->roomService->getAll();
             $patientSts = Patient::groupBy('status')->selectRaw('count(*) as total,status')->get();
+//            dd($patientSts);
             $patient_ids = Bed::groupBy('patient_id')->selectRaw('count(*) as total,patient_id')->get();
 //            dd($patient_ids);
             return view('layouts.rooms.list', compact('rooms', 'beds', 'patients','patientSts','patient_ids'));
