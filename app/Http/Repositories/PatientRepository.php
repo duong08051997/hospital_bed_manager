@@ -15,7 +15,7 @@ class PatientRepository
     }
     public function getOrderBy()
     {
-        return $this->patient->orderBy('id', 'DESC')->paginate(8);
+        return $this->patient->orderBy('id', 'DESC')->paginate(6);
     }
     public function getAll()
     {
