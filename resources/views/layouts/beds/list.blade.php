@@ -22,21 +22,27 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
+                        <td></td>
                     @else
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     @endif
+                    @if(empty($bed->patient->id))
                     <td>
                         <a href="{{route('beds.edit',$bed->id)}}">
                             <i class="fa fa-edit" style="font-size:24px"></i></a>
                     </td>
+
                     <td>
                         <a href="#" >
                             <i class="fa fa-trash-o" style="font-size:24px;color: red"></i></a>
                     </td>
+                    @endif
                 </tr>
+
 
             @empty
                 <tr>

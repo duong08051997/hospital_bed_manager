@@ -66,7 +66,7 @@ class PatientController extends Controller
     {
         $this->patientService->updatePatient($request,$id);
         Session::flash('success','Chỉnh sửa thông tin bệnh nhân thành công');
-        return redirect()->route('rooms.index');
+        return redirect()->route('patients.index');
     }
     public function search(Request $request)
     {

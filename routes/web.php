@@ -29,7 +29,7 @@ Route::prefix('beds')->group(function () {
     Route::post('create','BedController@store')->name('beds.store');
     Route::get('/{id}/edit','BedController@edit')->name('beds.edit');
     Route::post('/{id}/edit','BedController@update')->name('beds.update');
-    Route::get('/{id}/out','BedController@showFormOut')->name('patients.formOut');
+    Route::get('/{id}/out','BedController@formOut')->name('patients.formOut');
     Route::post('/{id}/out','BedController@patientOut')->name('patients.out');
 });
 Route::prefix('patients')->group(function () {

@@ -22,19 +22,39 @@ $(document).ready(function () {
                 console.log(result);
                 let data = result
                 let html =
-                    `<tr>
-                    <td style="border: none "><b>Họ và tên: </b>${data.name}</td>
-                    </tr>
-                    <tr>
-                    <td style="border: none"><b>Ngày sinh: </b> ${data.dob} </td>
-                    </tr>
-<tr>
-                    <td style="border: none "><b>Giới Tính: </b>${data.gender}</td>
-                    </tr>
-                    <tr>
-                    <td style="border: none"><b>Tình trạng: </b> ${data.status} </td>
-                    </tr>`
+                    `
+                <div >
+                    <table class="table">
 
+                        <tr>
+                        <th> Họ và tên:</th>
+                            <td >${data.name}</td>
+                        </tr>
+                        <tr>
+                        <th>Ngày sinh:</th>
+                            <td >${data.dob}  </td>
+                        </tr>
+                        <tr>
+                        <th>Giới Tính:</th>
+                            <td >${data.gender}</td>
+                        </tr>
+                        <tr>
+                        <th>Tình trạng:</th>
+                            <td >${data.status}</td>
+                        </tr>
+                        <tr>
+                        <th>Ghi chú:</th>
+                            <td >${data.note} </td>
+                        </tr>
+                         <tr>
+                         <th>Ngày nhập viện:</th>
+                            <td >${data.date} </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+              `
                 $('#patient-detail').html(html)
             },
         })

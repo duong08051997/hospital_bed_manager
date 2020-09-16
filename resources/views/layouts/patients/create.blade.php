@@ -23,10 +23,13 @@
                 <input type="date" class="form-control" name="dob">
             </div>
             <div class="form-group">
-                <label>Giới tính: </label><br>
-                <input name="gender" type="radio" value="Nam" />Nam<br>
-                <input name="gender" type="radio" value="Nữ" />Nữ<br>
-                <input name="gender" type="radio" value="Khác" />Khác<br>
+                <label for="">Giới tính: </label><br>
+                <input name="gender" id="male" type="radio" value="Nam" checked />
+                <label for="male">Nam</label><br>
+                <input name="gender" id="female" type="radio" value="Nữ" />
+                <label for="female">Nữ</label><br>
+                <input name="gender" id="other"  type="radio" value="Khác" />
+                <label for="other">Khác</label><br>
             </div>
             <div class="form-group ">
                 <label >Ngày nhập viện:</label>
@@ -34,9 +37,12 @@
             </div>
             <div class="form-group">
                 <label>Tình trạng sức khỏe: </label><br>
-                <input name="status" type="checkbox" value="Nguy kịch" />Nguy kịch<br>
-                <input name="status" type="checkbox" value="Nặng" />Nặng<br>
-                <input name="status" type="checkbox" value="Ổn định" />Ổn định<br>
+                <input name="status" type="radio" id="nguykich" value="Nguy kịch" />
+                <label for="nguykich">Nguy kịch</label><br>
+                <input name="status" type="radio" id="nang" value="Nặng" />
+                <label for="nang">Nặng</label><br>
+                <input name="status" type="radio" id="ondinh" value="Ổn định" />
+                <label for="ondinh">Ổn định</label><br>
             </div>
             <div class="form-group">
                 <label>Chú thích: </label>

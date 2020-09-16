@@ -10,14 +10,13 @@
                     @foreach($patients as $patient)
                         @if($patientId->id == $patient->id )
                             <tr>
-                                <td style="border: none"><img src="{{asset('storage/'.$patient->image)}}" width="150"
-                                                              height="150" class="rounded-circle" alt=""></td>
+                                <td style="border: none"><img src="{{asset('storage/'.$patient->image)}}" width="170"
+                                                              height="170" class="rounded-circle" alt=""></td>
                             </tr>
                     </thead>
                 </table>
-                <a href="{{route('patients.delete',$patient->id)}}" class="btn btn-success">Xuất viện</a>
+                <a href="{{route('patients.formOut',$patient->bed->id)}}" class="btn btn-success">Xuất viện</a>
                 <button onclick="window.history.go(-1); return false;" class="btn btn-secondary">Quay lại</button>
-           <button class="search-detail">chi tiet</button>
             </div>
             <div class="row">
                 <div class=" col-sm-12 " id="detail">
@@ -43,7 +42,6 @@
                         </tr>
                         </thead>
                     </table>
-
                 </div>
             </div>
             <div class="row">
@@ -65,5 +63,4 @@
                 </div>
             </div>
         </div>
-    <div class="display-detail"></div>
 @endsection

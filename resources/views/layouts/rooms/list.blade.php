@@ -6,9 +6,9 @@
             <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}
         </p>
     @endif
-    <a href="{{route('rooms.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới
+    <a href="{{route('rooms.create')}}" class="btn btn-success" ><i class="fa fa-plus">Thêm mới
             phòng bệnh</i></a>
-    <a href="{{route('beds.create')}}" class="btn btn-success" style="color: black"><i class="fa fa-plus">Thêm mới
+    <a href="{{route('beds.create')}}" class="btn btn-success" ><i class="fa fa-plus">Thêm mới
             giường bệnh</i></a>
     @foreach($patientSts as $patientSt)
         @if($patientSt->status =="Nguy kịch")

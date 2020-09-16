@@ -27,10 +27,20 @@
                     <input type="date" class="form-control" name="dob" value="{{$patient->dob}}">
                 </div>
                 <div class="form-group">
+                    <label>Đã có giường chưa?: </label><br>
+                    <input name="status_bed" type="radio" id="no" value="chưa có giường bệnh" @if($patient->status_bed == \App\Http\Controllers\Major::NO) {{'checked'}} @endif  />
+                    <label for="no">Chưa</label> <br>
+                    <input name="status_bed" type="radio" id="yes" value="đã có giường bệnh" @if($patient->status_bed == \App\Http\Controllers\Major::YES) {{'checked'}} @endif />
+                    <label for="yes">Có</label> <br>
+                </div>
+                <div class="form-group">
                     <label>Giới tính: </label><br>
-                    <input name="gender" type="radio" value="Nam" @if($patient->gender == "Nam") {{'checked'}} @endif  />Nam<br>
-                    <input name="gender" type="radio" value="Nữ" @if($patient->gender == "Nữ") {{'checked'}} @endif />Nữ<br>
-                    <input name="gender" type="radio" value="Khác" @if($patient->gender == "Khác") {{'checked'}} @endif />Khác<br>
+                    <input name="gender" type="radio" value="Nam" id="nam" @if($patient->gender == "Nam") {{'checked'}} @endif  />
+                    <label for="nam">Nam</label> <br>
+                    <input name="gender" type="radio" value="Nữ" id="nu" @if($patient->gender == "Nữ") {{'checked'}} @endif />
+                    <label for="nu">Nữ</label> <br>
+                    <input name="gender" type="radio" id="khac" value="Khác" @if($patient->gender == "Khác") {{'checked'}} @endif />
+                    <label for="khac">Khác</label> <br>
                 </div>
                 <div class="form-group ">
                     <label >Ngày nhập viện:</label>
@@ -38,9 +48,12 @@
                 </div>
                 <div class="form-group">
                     <label>Tình trạng sức khỏe: </label><br>
-                    <input name="status" type="checkbox" value="Nguy kịch" @if($patient->status == "Nguy kịch") {{'checked'}} @endif />Nguy kịch<br>
-                    <input name="status" type="checkbox" value="Nặng" @if($patient->status =="Nặng") {{'checked'}} @endif />Nặng<br>
-                    <input name="status" type="checkbox" value="Ổn định" @if($patient->status == "Ổn định") {{'checked'}} @endif />Ổn định<br>
+                    <input name="status" type="radio" id="nguykich" value="Nguy kịch" @if($patient->status == "Nguy kịch") {{'checked'}} @endif />
+                    <label for="nguykich">Nguy kịch</label> <br>
+                    <input name="status" type="radio" id="nang" value="Nặng" @if($patient->status =="Nặng") {{'checked'}} @endif />
+                    <label for="nang">Nặng</label> <br>
+                    <input name="status" type="radio" id="ondinh" value="Ổn định" @if($patient->status == "Ổn định") {{'checked'}} @endif />
+                    <label for="ondinh">Ổn định</label> <br>
                 </div>
                 <div class="form-group">
                     <label >Chú thích: </label>

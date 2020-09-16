@@ -4,6 +4,7 @@
 namespace App\Http\Services;
 
 
+use App\Http\Controllers\Major;
 use App\Http\Repositories\PatientRepository;
 use App\Patient;
 use Illuminate\Support\Facades\Storage;
@@ -35,6 +36,7 @@ class PatientService
         }
         $patient->name =$request->name;
         $patient->dob =$request->dob;
+        $patient->status_bed= Major::NO;
         $patient->gender=$request->gender;
         $patient->date =$request->date;
         $patient->status=$request->status;
@@ -58,7 +60,7 @@ class PatientService
     public function updatePatient($request,$id)
     {
         $patient = $this->patientRepo->findId($id);
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')){
             $patientImg = $patient->image;
             if ($patientImg) {
                 Storage::delete('/public' . $patientImg);
@@ -69,6 +71,7 @@ class PatientService
         }
         $patient->name =$request->name;
         $patient->dob =$request->dob;
+        $patient->status_bed= $request->status_bed;
         $patient->gender=$request->gender;
         $patient->date =$request->date;
         $patient->status=$request->status;
@@ -81,7 +84,4 @@ class PatientService
         $keyword = $request->input('keyword');
         return $this->patientRepo->search($keyword);
     }
-
-
-
 }
