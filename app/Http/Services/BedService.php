@@ -46,7 +46,7 @@ class BedService
     public function patientOut($id)
     {
         $bed = $this->bedRepo->findId($id);
-        $bed->patient_id ='NULL';
+        $bed->patient_id = null;
         $this->bedRepo->saveBed($bed);
     }
 

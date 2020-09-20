@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f69005-820c-4c6c-9889-6e616ca082d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BedController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/BedService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/BedService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/beds/formOut.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/beds/formOut.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/rooms/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/rooms/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +139,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../email-validation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -161,6 +163,7 @@
       <workItem from="1600356063642" duration="1633000" />
       <workItem from="1600389712994" duration="43000" />
       <workItem from="1600390759368" duration="3792000" />
+      <workItem from="1600584785091" duration="2555000" />
     </task>
     <servers />
   </component>

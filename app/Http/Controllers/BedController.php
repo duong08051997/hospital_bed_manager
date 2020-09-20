@@ -55,16 +55,20 @@ class BedController extends Controller
         $this->bedService->updateBed($request,$id);
         return redirect()->route('rooms.index',compact('beds'));
     }
+    public function formOut($id)
+    {
+        $bed = $this->bedService->findId($id);
+//        $this->bedService->patientOut($id);
+        return view('layouts.beds.formOut',compact('bed'));
+//        Session::flash('success','Bệnh nhân đã xuất viện !');
+//        return redirect()->route('rooms.index',compact('bed'));
+    }
     public function patientOut($id)
     {
         $beds = $this->bedService->findId($id);
         $this->bedService->patientOut($id);
+        Session::flash('success','Bệnh nhân đã xuất viện !');
         return redirect()->route('rooms.index',compact('beds'));
     }
-    public function formOut($id)
-    {
-        $bed = $this->bedService->findId($id);
-        $this->bedService->patientOut($id);
-        return view('layouts.beds.formOut',compact('bed'));
-    }
+
 }

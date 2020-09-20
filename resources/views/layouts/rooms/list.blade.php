@@ -28,8 +28,8 @@
         <div class="col-md-12" style="margin-bottom: 15px ;background-color: white">
             <div class="col-md-12">
                 <div style="font-size: 20px;
-                        @if($room->name =="Phòng cách ly đặc biệt") color :{{'#800000'}}
-                @elseif( $room->name =="Phòng cấp cứu") color :{{'red'}}
+                        @if($room->name =="Phòng cách ly đặc biệt") color:{{'#800000'}}
+                @elseif( $room->name =="Phòng cấp cứu") color:{{'red'}}
                 @elseif($room->name =="Phòng điều trị") color:{{'#FF9900'}}
                 @elseif($room->name =="Phòng phục hồi chức năng") color :{{"#006600"}}
                 @endif
@@ -58,9 +58,9 @@
                                                    style="font-size: 60px;
                                                        color : green;
                                                    @if(!empty($bed->patient->id))
-                                                   @if($bed->patient->status == "Nguy kịch") color : {{"red"}}
-                                                   @elseif($bed->patient->status == "Nặng") color : {{"orange"}}
-                                                   @elseif($bed->patient->status == "Ổn định") color : {{"pink"}}
+                                                   @if($bed->patient->status == "Nguy kịch") color:{{"red"}}
+                                                   @elseif($bed->patient->status == "Nặng") color:{{"orange"}}
+                                                   @elseif($bed->patient->status == "Ổn định") color:{{"pink"}}
                                                    @endif
                                                    @endif">
                                                 </i>
@@ -68,9 +68,9 @@
                                                      style="
                                                          font-size: 20px ;color: green;
                                                      @if(!empty($bed->patient->id))
-                                                     @if($bed->patient->status == "Nguy kịch") color : {{"red"}}
-                                                     @elseif($bed->patient->status == "Nặng") color : {{"orange"}}
-                                                     @elseif($bed->patient->status == "Ổn định") color : {{"pink"}}
+                                                     @if($bed->patient->status == "Nguy kịch") color:{{"red"}}
+                                                     @elseif($bed->patient->status == "Nặng") color:{{"orange"}}
+                                                     @elseif($bed->patient->status == "Ổn định") color:{{"pink"}}
                                                      @endif
                                                      @endif;
                                                          ">
