@@ -79,9 +79,9 @@
                    value="{{old('email')}}"
                    placeholder="exam@gmail.com"
             >
-            @if($errors->has('email'))
-                <p class="text-danger">{{$errors->first('email')}}</p>
-            @endif
+                @if($errors->has('email'))
+                    <p class="text-danger">{{$errors->first('email')}}</p>
+                @endif
         </div>
         <div class="form-group">
             <label for="inputPassword">Password</label>
