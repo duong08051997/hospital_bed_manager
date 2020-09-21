@@ -65,10 +65,10 @@ class BedController extends Controller
     }
     public function patientOut($id)
     {
-        $beds = $this->bedService->findId($id);
+//        $beds = $this->bedService->findId($id);
         $this->bedService->patientOut($id);
         Session::flash('success','Bệnh nhân đã xuất viện !');
-        return redirect()->route('rooms.index',compact('beds'));
+        return redirect()->route('rooms.index');
     }
 
 }
