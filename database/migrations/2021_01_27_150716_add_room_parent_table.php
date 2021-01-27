@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnOnBedsTable extends Migration
+class AddRoomParentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddColumnOnBedsTable extends Migration
      */
     public function up()
     {
-        Schema::table('beds', function (Blueprint $table) {
-            $table->unsignedBigInteger('patient_id');
-            $table->foreign('patient_id')->references('id')->on('patients');
+        Schema::create('room_parent', function (Blueprint $table) {
+            $table->integer('room_id')->nullable()->index('room_id');
+            $table->integer('parent_id')->nullable()->index('parent_id');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ class AddColumnOnBedsTable extends Migration
      */
     public function down()
     {
-        Schema::table('beds', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('room_parent');
     }
 }

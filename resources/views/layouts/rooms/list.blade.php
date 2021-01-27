@@ -10,20 +10,6 @@
             phòng bệnh</i></a>
     <a href="{{route('beds.create')}}" class="btn btn-success" ><i class="fa fa-plus">Thêm mới
             giường bệnh</i></a>
-    @foreach($patientSts as $patientSt)
-        @if($patientSt->status =="Nguy kịch")
-    <img src="./assets/img/red.jpg" alt="" width="15px" height="20px" style="margin-left: 30px"> Nguy kịch
-    ({{$patientSt->total}} giường)
-        @elseif($patientSt->status =="Nặng")
-    <img src="./assets/img/orange.png" alt="" width="15px" height="20px" style="margin-left: 30px"> Nặng
-    ({{$patientSt->total}} giường)
-        @elseif($patientSt->status =="Ổn định")
-    <img src="./assets/img/pink.jpg" alt="" width="15px" height="20px" style="margin-left: 30px"> Ổn định
-    ({{$patientSt->total}} giường)
-    <img src="./assets/img/green.png" alt="" width="15px" height="20px" style="margin-left: 30px"> Trống
-                ({{$patient_ids[0]['total']}} giường)
-    @endif
-    @endforeach
     @foreach($rooms as $room)
         <div class="col-md-12" style="margin-bottom: 15px ;background-color: white">
             <div class="col-md-12">

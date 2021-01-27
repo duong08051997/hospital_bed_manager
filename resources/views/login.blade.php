@@ -96,7 +96,7 @@
                     @endif
                 </div>
                 <button type="submit" class="btn btn-primary">Đăng nhập</button>
-{{--                    <a href="{{route('form.register')}}" class="btn btn-success">Đăng kí mới</a>--}}
+                    <a href="{{route('form.register')}}" class="btn btn-success">Đăng kí mới</a>
             </form>
         </div>
         </div>

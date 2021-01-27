@@ -26,11 +26,8 @@ class BedController extends Controller
 
     public function index()
     {
-        if (Auth::check()) {
             $beds = $this->bedService->getOrderBy();
             return view('layouts.beds.list', compact('beds'));
-        }
-        return view('login');
     }
     public function create()
     {

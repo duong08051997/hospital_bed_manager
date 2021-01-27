@@ -14,31 +14,16 @@ use Illuminate\Support\Facades\Session;
 
 class RoomController extends Controller
 {
-    protected $bedService;
     protected $roomService;
-    protected $patientService;
 
-    public function __construct(RoomService $roomService,
-                                BedService $bedService,
-                                PatientService $patientService)
+    public function __construct(RoomService $roomService)
     {
-        $this->patientService=$patientService;
         $this->roomService = $roomService;
-        $this->bedService = $bedService;
     }
     public function index()
     {
-        if (Auth::check()) {
-            $patients = $this->patientService->getAll();
-            $beds = $this->bedService->getAll();
             $rooms = $this->roomService->getAll();
-            $patientSts = Patient::groupBy('status')->selectRaw('count(*) as total,status')->get();
-//            dd($patientSts);
-            $patient_ids = Bed::groupBy('patient_id')->selectRaw('count(*) as total,patient_id')->get();
-//            dd($patient_ids);
-            return view('layouts.rooms.list', compact('rooms', 'beds', 'patients','patientSts','patient_ids'));
-        }
-        return view('login');
+            return view('layouts.rooms.list',compact('rooms'));
     }
     public function create()
     {

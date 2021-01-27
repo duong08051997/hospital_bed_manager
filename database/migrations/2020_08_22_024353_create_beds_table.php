@@ -14,10 +14,10 @@ class CreateBedsTable extends Migration
     public function up()
     {
         Schema::create('beds', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('bed_id')->unsigned()->nullable()->default(0);
             $table->string('name');
-            $table->unsignedBigInteger('room_id');
-            $table->foreign('room_id')->references('id')->on('rooms');
+            $table->string('status');
             $table->timestamps();
         });
     }

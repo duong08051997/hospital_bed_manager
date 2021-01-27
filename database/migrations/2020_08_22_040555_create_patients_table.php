@@ -14,7 +14,8 @@ class CreatePatientsTable extends Migration
     public function up()
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('parent_id')->unsigned()->nullable()->default(0);
             $table->string('name');
             $table->date('dob');
             $table->string('gender');
@@ -22,6 +23,7 @@ class CreatePatientsTable extends Migration
             $table->string('status');
             $table->string('note');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
