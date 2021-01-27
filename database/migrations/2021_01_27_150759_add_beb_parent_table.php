@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdatePatientsTable extends Migration
+class AddBebParentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class UpdatePatientsTable extends Migration
      */
     public function up()
     {
-        Schema::table('patients', function (Blueprint $table) {
-            $table->softDeletes();
+        Schema::create('bed_parent', function (Blueprint $table) {
+            $table->integer('bed_id')->nullable()->index('bed_id');
+            $table->integer('parent_id')->nullable()->index('parent_id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class UpdatePatientsTable extends Migration
      */
     public function down()
     {
-        Schema::table('patients', function (Blueprint $table) {
-            //
-        });
+        //
     }
 }

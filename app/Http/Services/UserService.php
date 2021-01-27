@@ -14,7 +14,7 @@ class UserService
     public function addUser($request)
     {
         $user = new User();
-        $user->username = $request->username;
+        $user->name = $request->username;
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $this->userRepo->save($user);

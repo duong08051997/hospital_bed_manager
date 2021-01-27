@@ -25,11 +25,8 @@ class PatientController extends Controller
     }
     public function index()
     {
-        if (Auth::check()) {
             $patients = $this->patientService->getOrderBy();
             return view('layouts.patients.list', compact('patients'));
-        }
-        return view('login');
     }
     public function create()
     {

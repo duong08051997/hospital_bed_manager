@@ -95,7 +95,7 @@
                         <li class="nav-item btn-rotate dropdown">
                             <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" style="color: green"><i class="nc-icon nc-single-02">
-                                </i>{{\Illuminate\Support\Facades\Auth::user()->name}}
+                                </i>{{ \Illuminate\Support\Facades\Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('users.logout') }}">log out </a>

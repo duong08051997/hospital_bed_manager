@@ -27,9 +27,10 @@ class AuthController extends Controller
             Session::flash('error','email đã tồn tại');
             return redirect()->route('form.register');
         }
+       $this->userService->addUser($request);
         toastr()->success('Đăng kí thành công');
-//        Session::flash('success','Đăng kí thành công');
-        return redirect()->route('form.register');
+        Session::flash('success','Đăng kí thành công');
+        return redirect()->route('login');
 
     }
 
@@ -39,10 +40,10 @@ class AuthController extends Controller
     }
     public function login(LoginRequest $request)
     {
-        $data =[
-            'email'=>$request->email,
-            'password'=>$request->password
-        ];
+       $data = [
+         'email' =>$request['email'],
+         'password' => $request['password']
+       ];
         if (!Auth::attempt($data)) {
             toastr()->error('Email hoặc mật khẩu không đúng!');
             return redirect()->route('login');
