@@ -10,11 +10,9 @@ use App\Patient;
 class BedRepository
 {
     protected $bed;
-    protected $patient;
-    public function __construct(Bed $bed,Patient $patient)
+    public function __construct(Bed $bed)
     {
         $this->bed=$bed;
-        $this->patient=$patient;
     }
     public function getOrderBy()
     {
@@ -28,10 +26,6 @@ class BedRepository
     public function saveBed($bed)
     {
         $bed->save();
-    }
-    public function savePatient($patient)
-    {
-        $patient->save();
     }
     public function findId($id)
     {

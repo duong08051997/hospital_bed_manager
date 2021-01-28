@@ -22,8 +22,9 @@ class RoomController extends Controller
     }
     public function index()
     {
+        $beds = Bed::get();
             $rooms = $this->roomService->getAll();
-            return view('layouts.rooms.list',compact('rooms'));
+            return view('layouts.rooms.list',compact('rooms','beds'));
     }
     public function create()
     {

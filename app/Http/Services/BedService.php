@@ -12,11 +12,9 @@ use App\Patient;
 class BedService
 {
     protected $bedRepo;
-    protected $patientRepo;
-    public function __construct(BedRepository $bedRepo,PatientRepository $patientRepo)
+    public function __construct(BedRepository $bedRepo)
     {
         $this->bedRepo=$bedRepo;
-        $this->patientRepo=$patientRepo;
     }
     public function getAll()
     {
@@ -31,23 +29,12 @@ class BedService
         $bed = new Bed();
         $bed->name = $request->name;
         $bed->room_id = $request->room_id;
+        $bed->status = Bed::NO_PATIENT;
         $this->bedRepo->saveBed($bed);
     }
     public function findId($id)
     {
         return $this->bedRepo->findId($id);
-    }
-    public function updateBed($request ,$id)
-    {
-        $bed = $this->bedRepo->findId($id);
-        $bed->patient_id = $request->patient_id;
-        $this->bedRepo->saveBed($bed);
-    }
-    public function patientOut($id)
-    {
-        $bed = $this->bedRepo->findId($id);
-        $bed->patient_id = null;
-        $this->bedRepo->saveBed($bed);
     }
 
 }

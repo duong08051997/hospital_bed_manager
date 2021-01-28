@@ -21,6 +21,7 @@
                         @endforeach
                     </select>
                 </div>
+                <input type="text" hidden name="status" >
                 <button type="submit" class="btn btn-primary">Thêm mới</button>
                 <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
             </form>

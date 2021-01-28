@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    public function bed()
+    const NEW = 0;
+
+    public function beds()
     {
-        return $this->hasMany('App\Bed');
+        return $this->hasMany(Bed::class,'bed_id','room_id');
+    }
+    public function patients()
+    {
+        return $this->belongsTo(Patient::class,'patient_id','room_id');
     }
 }
