@@ -13,9 +13,9 @@ class AddBebParentTable extends Migration
      */
     public function up()
     {
-        Schema::create('bed_parent', function (Blueprint $table) {
+        Schema::create('bed_patient', function (Blueprint $table) {
             $table->integer('bed_id')->nullable()->index('bed_id');
-            $table->integer('parent_id')->nullable()->index('parent_id');
+            $table->integer('patient_id')->nullable()->index('patient_id');
             $table->timestamps();
         });
     }
