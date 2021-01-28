@@ -8,60 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{asset('css-v2/register.css')}}">
     <title>Đăng kí</title>
     @toastr_css
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
 </head>
 <body>
 <div class="container">
@@ -101,7 +50,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="inputUsername">email người dùng</label>
+                <label for="inputUsername">Email người dùng</label>
                 <input type="email"
                        class="form-control"
                        id="inputUsername"
@@ -139,7 +88,8 @@
                        placeholder="Mật khẩu"
                        >
             </div>
-            <button type="submit" class="btn btn-primary" id="register" name="register">Đăng kí</button>
+            <button type="submit" class="btn btn-success" id="register" name="register">Đăng kí</button>
+                <a href="{{route('login')}}" class="btn btn-primary">Đăng nhập</a>
         </form>
     </div>
 </div>
