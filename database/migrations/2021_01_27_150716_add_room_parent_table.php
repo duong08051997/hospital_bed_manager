@@ -13,9 +13,9 @@ class AddRoomParentTable extends Migration
      */
     public function up()
     {
-        Schema::create('room_parent', function (Blueprint $table) {
+        Schema::create('room_patient', function (Blueprint $table) {
             $table->integer('room_id')->nullable()->index('room_id');
-            $table->integer('parent_id')->nullable()->index('parent_id');
+            $table->integer('patient_id')->nullable()->index('patient_id');
             $table->timestamps();
         });
     }

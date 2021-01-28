@@ -17,6 +17,8 @@ class CreateBedsTable extends Migration
             $table->increments('bed_id');
             $table->string('name');
             $table->string('status');
+            $table->integer('room_id')->unsigned();
+            $table->foreign('room_id')->references('id')->on('rooms');
             $table->timestamps();
         });
     }

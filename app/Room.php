@@ -12,8 +12,7 @@ class Room extends Model
     {
         return $this->hasMany(Bed::class,'bed_id','room_id');
     }
-    public function patients()
-    {
+    public function patient(){
         return $this->belongsTo(Patient::class,'patient_id','room_id');
     }
 }
