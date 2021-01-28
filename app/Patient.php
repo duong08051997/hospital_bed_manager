@@ -5,19 +5,18 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
+use phpDocumentor\Reflection\Types\This;
 
 class Patient extends Model
 {
     use SoftDeletes;
     public function bed()
     {
-        return $this->hasOne('App\Bed');
+        return $this->belongsToMany(Bed::class,'bed_id','patient_id');
     }
 
-    protected $dates =['deleted_at','bob'];
-
-    public function getAttributeDate($value)
+    public function room()
     {
-        return  Carbon::parse($value)->format('Y-m-d\Th:m:s');
+        return $this->belongsToMany(Room::class,'room_id','parent_id');
     }
 }

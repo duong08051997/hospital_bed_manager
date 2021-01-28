@@ -19,6 +19,7 @@ class RoomService
         $room = new Room();
         $room->name = $request->name;
         $room->price =$request->price;
+        $room->status = Room::NEW;
         $this->roomRepo->save($room);
     }
 

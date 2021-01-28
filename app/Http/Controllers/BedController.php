@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Services\BedService;
 use App\Http\Services\PatientService;
 use App\Http\Services\RoomService;
+use App\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -12,16 +13,10 @@ use Illuminate\Support\Facades\Session;
 class BedController extends Controller
 {
     protected $bedService;
-    protected $patientService;
-    protected $roomService;
 
-    public function __construct(BedService $bedService,
-                                PatientService $patientService,
-                                RoomService $roomService)
+    public function __construct(BedService $bedService)
     {
-        $this->roomService=$roomService;
         $this->bedService = $bedService;
-        $this->patientService = $patientService;
     }
 
     public function index()
@@ -31,7 +26,7 @@ class BedController extends Controller
     }
     public function create()
     {
-        $rooms = $this->roomService->getAll();
+        $rooms = Room::get();
         return view('layouts.beds.create',compact('rooms'));
     }
     public function store(Request $request)
