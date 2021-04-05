@@ -24,9 +24,9 @@
                 <fieldset class="">
                     <div class="row">
                         @foreach($beds as $bed)
-                            @if($bed->room_id==$room->id)
+                            @if($bed->room_id == $room->room_id)
                                 <div class="col-md-1">
-                                    <a href=" @if(empty($bed->patient->id)){{route('beds.edit',$bed->id)}} @else {{route('patients.detail',$bed->patient->id)}} @endif"
+                                    <a href=" @if(empty($bed->patient->id)){{route('beds.edit',$bed->bed_id)}} @else {{route('patients.detail',$bed->patient->id)}} @endif"
                                        class="hoverMe" data-placement="right"
                                        @if(!empty($bed->patient->id))
                                        title="

@@ -10,7 +10,7 @@ class Bed extends Model
     const HAVE_PATIENT = 1;
     public function room()
     {
-        return $this->belongsTo(Room::class,'room_id','bed_id');
+        return $this->hasMany(Room::class,'room_id','bed_id');
     }
     public function patient()
     {

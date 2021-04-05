@@ -16,7 +16,7 @@
                 <tr>
                     <td>{{++$key}}</td>
                     <td>{{$bed->name}}</td>
-                    <td>{{$bed->room->name}}</td>
+                    <td></td>
                     @if(!empty($bed->patient->id))
                     <td>{{$bed->patient->name}}</td>
                         <td></td>
@@ -32,7 +32,7 @@
                     @endif
                     @if(empty($bed->patient->id))
                     <td>
-                        <a href="{{route('beds.edit',$bed->id)}}">
+                        <a href="{{route('beds.edit',$bed->bed_id)}}">
                             <i class="fa fa-edit" style="font-size:24px"></i></a>
                     </td>
 
