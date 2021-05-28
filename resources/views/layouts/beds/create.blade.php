@@ -17,7 +17,7 @@
                     <label>Tên phòng bệnh</label>
                     <select class="form-control" name="room_id">
                         @foreach($rooms as $room)
-                            <option value="{{ $room->id }}">{{ $room->name }}</option>
+                            <option value="{{ $room->room_id }}">{{ $room->name }}</option>
                         @endforeach
                     </select>
                 </div>
